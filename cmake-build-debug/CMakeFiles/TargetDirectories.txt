@@ -1,0 +1,3 @@
+C:/Users/21481/Desktop/motor_mit_control/cmake-build-debug/CMakeFiles/motor_mit_control.elf.dir
+C:/Users/21481/Desktop/motor_mit_control/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/21481/Desktop/motor_mit_control/cmake-build-debug/CMakeFiles/rebuild_cache.dir
