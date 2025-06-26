@@ -20,7 +20,7 @@ void MOTOR_CONTROL_TASK()
     while (1)
     {
 
-        CanComm_SendControlPara(0, 0, 0, 0.0f, 0.00f);//只用最后一个
+        CanComm_SendControlPara(0, 0, 0, 0.0f, 0.2f);//只用最后一个
         osDelay(10);
 
 
