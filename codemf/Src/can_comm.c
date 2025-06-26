@@ -114,6 +114,7 @@ static void CanTransmit(uint8_t *buf, uint8_t len)
   * @param
   * @retval
   */
+  //p:期望位置 v:期望速度 kp: kd: t:前馈扭矩
 void CanComm_SendControlPara(float f_p, float f_v, float f_kp, float f_kd, float f_t)
 {
     uint16_t p, v, kp, kd, t;

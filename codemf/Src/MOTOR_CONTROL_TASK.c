@@ -20,7 +20,7 @@ void MOTOR_CONTROL_TASK()
     while (1)
     {
 
-        CanComm_SendControlPara(0, 5, 0, 1, 0.1f);
+        CanComm_SendControlPara(0, 0, 0, 0.0f, 0.00f);
         osDelay(10);
 
 

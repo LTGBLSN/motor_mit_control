@@ -1,5 +1,5 @@
 CMakeFiles/motor_mit_control.elf.dir/Core/Src/sysmem.c.obj: \
- C:\Users\21481\Desktop\motor_mit_control\Core\Src\sysmem.c \
+ D:\RoboMaster_git\motor_mit_control\Core\Src\sysmem.c \
  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/errno.h \
  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/errno.h \
  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h \

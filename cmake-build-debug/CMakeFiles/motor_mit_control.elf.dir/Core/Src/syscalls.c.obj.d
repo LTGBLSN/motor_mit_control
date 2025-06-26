@@ -1,5 +1,5 @@
 CMakeFiles/motor_mit_control.elf.dir/Core/Src/syscalls.c.obj: \
- C:\Users\21481\Desktop\motor_mit_control\Core\Src\syscalls.c \
+ D:\RoboMaster_git\motor_mit_control\Core\Src\syscalls.c \
  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/stat.h \
  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h \

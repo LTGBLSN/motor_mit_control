@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/21481/Desktop/motor_mit_control
+# Install script for directory: D:/RoboMaster_git/motor_mit_control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/21481/Desktop/motor_mit_control/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/RoboMaster_git/motor_mit_control/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
