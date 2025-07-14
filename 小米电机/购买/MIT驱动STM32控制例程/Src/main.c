@@ -32,7 +32,6 @@
 #include "button.h"
 #include "led.h"
 #include "can_comm.h"
-#include "motor_control.h"
 #include "stdbool.h"
 /* USER CODE END Includes */
 

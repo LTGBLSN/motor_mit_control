@@ -66,6 +66,4 @@ CMakeFiles/motor_mit_control.elf.dir/codemf/Src/MOTOR_CONTROL_TASK.c.obj: \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim.h \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim_ex.h \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h \
- D:\RoboMaster_git\motor_mit_control\codemf\Inc/can_comm.h \
- D:\RoboMaster_git\motor_mit_control\codemf\Inc/motor_control.h \
- C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h
+ D:\RoboMaster_git\motor_mit_control\codemf\Inc/can_comm.h

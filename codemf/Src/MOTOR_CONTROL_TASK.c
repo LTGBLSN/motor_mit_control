@@ -4,7 +4,6 @@
 #include "cmsis_os.h"
 #include "CAN_receive.h"
 #include "can_comm.h"
-#include "motor_control.h"
 
 
 void MOTOR_CONTROL_TASK()
@@ -13,14 +12,14 @@ void MOTOR_CONTROL_TASK()
     CanComm_ControlCmd(CMD_MOTOR_MODE);
     osDelay(100);
     CanComm_SendControlPara(0,0,0,0,0);
-    osDelay(100);
-    CanComm_ControlCmd(CMD_ZERO_POSITION);
+//    osDelay(100);
+//    CanComm_ControlCmd(CMD_ZERO_POSITION);
     osDelay(10);
 
     while (1)
     {
 
-        CanComm_SendControlPara(0, 0, 0, 0.0f, 0.2f);//只用最后一个
+        CanComm_SendControlPara(0, 0, 0, 0.0f, 0.00f);
         osDelay(10);
 
 

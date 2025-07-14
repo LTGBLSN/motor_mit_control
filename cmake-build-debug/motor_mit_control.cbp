@@ -532,9 +532,6 @@
 		<Unit filename="D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h">
 			<Option target="motor_mit_control.elf"/>
 		</Unit>
-		<Unit filename="D:/RoboMaster_git/motor_mit_control/codemf/Inc/motor_control.h">
-			<Option target="motor_mit_control.elf"/>
-		</Unit>
 		<Unit filename="D:/RoboMaster_git/motor_mit_control/codemf/Inc/uart_printf.h">
 			<Option target="motor_mit_control.elf"/>
 		</Unit>
@@ -551,9 +548,6 @@
 			<Option target="motor_mit_control.elf"/>
 		</Unit>
 		<Unit filename="D:/RoboMaster_git/motor_mit_control/codemf/Src/can_comm.c">
-			<Option target="motor_mit_control.elf"/>
-		</Unit>
-		<Unit filename="D:/RoboMaster_git/motor_mit_control/codemf/Src/motor_control.c">
 			<Option target="motor_mit_control.elf"/>
 		</Unit>
 		<Unit filename="D:/RoboMaster_git/motor_mit_control/codemf/Src/uart_printf.c">

@@ -697,24 +697,10 @@ CMakeFiles/motor_mit_control.elf.dir/codemf/Src/can_comm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/motor_mit_control.elf.dir/codemf/Src/can_comm.c.s"
 	C:\CLionToolchains\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\RoboMaster_git\motor_mit_control\codemf\Src\can_comm.c -o CMakeFiles\motor_mit_control.elf.dir\codemf\Src\can_comm.c.s
 
-CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj: CMakeFiles/motor_mit_control.elf.dir/flags.make
-CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj: D:/RoboMaster_git/motor_mit_control/codemf/Src/motor_control.c
-CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj: CMakeFiles/motor_mit_control.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\RoboMaster_git\motor_mit_control\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj"
-	C:\CLionToolchains\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj -MF CMakeFiles\motor_mit_control.elf.dir\codemf\Src\motor_control.c.obj.d -o CMakeFiles\motor_mit_control.elf.dir\codemf\Src\motor_control.c.obj -c D:\RoboMaster_git\motor_mit_control\codemf\Src\motor_control.c
-
-CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.i"
-	C:\CLionToolchains\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\RoboMaster_git\motor_mit_control\codemf\Src\motor_control.c > CMakeFiles\motor_mit_control.elf.dir\codemf\Src\motor_control.c.i
-
-CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.s"
-	C:\CLionToolchains\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\RoboMaster_git\motor_mit_control\codemf\Src\motor_control.c -o CMakeFiles\motor_mit_control.elf.dir\codemf\Src\motor_control.c.s
-
 CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj: CMakeFiles/motor_mit_control.elf.dir/flags.make
 CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj: D:/RoboMaster_git/motor_mit_control/codemf/Src/uart_printf.c
 CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj: CMakeFiles/motor_mit_control.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\RoboMaster_git\motor_mit_control\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\RoboMaster_git\motor_mit_control\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj"
 	C:\CLionToolchains\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj -MF CMakeFiles\motor_mit_control.elf.dir\codemf\Src\uart_printf.c.obj.d -o CMakeFiles\motor_mit_control.elf.dir\codemf\Src\uart_printf.c.obj -c D:\RoboMaster_git\motor_mit_control\codemf\Src\uart_printf.c
 
 CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.i: cmake_force
@@ -772,7 +758,6 @@ motor_mit_control_elf_OBJECTS = \
 "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/LED_TASK.c.obj" \
 "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/MOTOR_CONTROL_TASK.c.obj" \
 "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/can_comm.c.obj" \
-"CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj" \
 "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj"
 
 # External object files for target motor_mit_control.elf
@@ -823,11 +808,10 @@ motor_mit_control.elf: CMakeFiles/motor_mit_control.elf.dir/codemf/Src/DEBUG_PRI
 motor_mit_control.elf: CMakeFiles/motor_mit_control.elf.dir/codemf/Src/LED_TASK.c.obj
 motor_mit_control.elf: CMakeFiles/motor_mit_control.elf.dir/codemf/Src/MOTOR_CONTROL_TASK.c.obj
 motor_mit_control.elf: CMakeFiles/motor_mit_control.elf.dir/codemf/Src/can_comm.c.obj
-motor_mit_control.elf: CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj
 motor_mit_control.elf: CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj
 motor_mit_control.elf: CMakeFiles/motor_mit_control.elf.dir/build.make
 motor_mit_control.elf: CMakeFiles/motor_mit_control.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\RoboMaster_git\motor_mit_control\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Linking C executable motor_mit_control.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\RoboMaster_git\motor_mit_control\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Linking C executable motor_mit_control.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\motor_mit_control.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/RoboMaster_git/motor_mit_control/cmake-build-debug/motor_mit_control.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/RoboMaster_git/motor_mit_control/cmake-build-debug/motor_mit_control.bin"

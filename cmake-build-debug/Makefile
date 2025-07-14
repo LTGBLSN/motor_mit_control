@@ -1192,30 +1192,6 @@ codemf/Src/can_comm.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor_mit_control.elf.dir\build.make CMakeFiles/motor_mit_control.elf.dir/codemf/Src/can_comm.c.s
 .PHONY : codemf/Src/can_comm.c.s
 
-codemf/Src/motor_control.obj: codemf/Src/motor_control.c.obj
-.PHONY : codemf/Src/motor_control.obj
-
-# target to build an object file
-codemf/Src/motor_control.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor_mit_control.elf.dir\build.make CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj
-.PHONY : codemf/Src/motor_control.c.obj
-
-codemf/Src/motor_control.i: codemf/Src/motor_control.c.i
-.PHONY : codemf/Src/motor_control.i
-
-# target to preprocess a source file
-codemf/Src/motor_control.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor_mit_control.elf.dir\build.make CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.i
-.PHONY : codemf/Src/motor_control.c.i
-
-codemf/Src/motor_control.s: codemf/Src/motor_control.c.s
-.PHONY : codemf/Src/motor_control.s
-
-# target to generate assembly for a file
-codemf/Src/motor_control.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor_mit_control.elf.dir\build.make CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.s
-.PHONY : codemf/Src/motor_control.c.s
-
 codemf/Src/uart_printf.obj: codemf/Src/uart_printf.c.obj
 .PHONY : codemf/Src/uart_printf.obj
 
@@ -1382,9 +1358,6 @@ help:
 	@echo ... codemf/Src/can_comm.obj
 	@echo ... codemf/Src/can_comm.i
 	@echo ... codemf/Src/can_comm.s
-	@echo ... codemf/Src/motor_control.obj
-	@echo ... codemf/Src/motor_control.i
-	@echo ... codemf/Src/motor_control.s
 	@echo ... codemf/Src/uart_printf.obj
 	@echo ... codemf/Src/uart_printf.i
 	@echo ... codemf/Src/uart_printf.s

@@ -18,26 +18,6 @@ extern CAN_HandleTypeDef hcan1;
 
 volatile float CurVelocity = 0;
 
-static void _CanFilter(void)
-{
-    CAN_FilterTypeDef   sCAN_Filter;
-
-    sCAN_Filter.FilterBank = 0;                         /* 指定将被初始化的过滤器 */
-    sCAN_Filter.FilterMode = CAN_FILTERMODE_IDMASK;     /* 过滤模式为屏蔽位模式 */
-    sCAN_Filter.FilterScale = CAN_FILTERSCALE_16BIT;    /* 指定滤波器的规模 */
-    sCAN_Filter.FilterIdHigh = 00;
-    sCAN_Filter.FilterIdLow = 00;
-    sCAN_Filter.FilterMaskIdHigh = 00;
-    sCAN_Filter.FilterMaskIdLow = 00;
-    sCAN_Filter.FilterFIFOAssignment = CAN_FILTER_FIFO0;
-    sCAN_Filter.FilterActivation = ENABLE;              /* 启用或禁用过滤器 */
-    sCAN_Filter.SlaveStartFilterBank = 0;               /* 选择启动从过滤器组 */
-
-    HAL_CAN_ConfigFilter(&hcan1, &sCAN_Filter);
-    HAL_CAN_Start(&hcan1);               /* 开启CAN通信 */
-    HAL_CAN_ActivateNotification(&hcan1,CAN_IT_RX_FIFO0_MSG_PENDING);    /* 开启挂起中断允许 */
-}
-
 /**
   * @brief  CAN接口初始化
   * @param

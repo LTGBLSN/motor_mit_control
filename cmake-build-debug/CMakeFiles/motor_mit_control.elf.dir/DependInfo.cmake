@@ -82,7 +82,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/RoboMaster_git/motor_mit_control/codemf/Src/LED_TASK.c" "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/LED_TASK.c.obj" "gcc" "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/LED_TASK.c.obj.d"
   "D:/RoboMaster_git/motor_mit_control/codemf/Src/MOTOR_CONTROL_TASK.c" "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/MOTOR_CONTROL_TASK.c.obj" "gcc" "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/MOTOR_CONTROL_TASK.c.obj.d"
   "D:/RoboMaster_git/motor_mit_control/codemf/Src/can_comm.c" "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/can_comm.c.obj" "gcc" "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/can_comm.c.obj.d"
-  "D:/RoboMaster_git/motor_mit_control/codemf/Src/motor_control.c" "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj" "gcc" "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj.d"
   "D:/RoboMaster_git/motor_mit_control/codemf/Src/uart_printf.c" "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj" "gcc" "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj.d"
   )
 

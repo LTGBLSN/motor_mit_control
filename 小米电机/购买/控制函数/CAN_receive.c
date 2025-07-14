@@ -220,8 +220,8 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
     {
 			case 0x11:
 			{
-        //get motor id
-        DM8009_READ_data_1[0] = rx_data[1]<<8|rx_data[2];
+                //get motor id
+                DM8009_READ_data_1[0] = rx_data[1]<<8|rx_data[2];
 				DM8009_READ_data_1[1] = rx_data[3]<<4|(rx_data[4]>>4);
 				DM8009_READ_data_1[2] = (rx_data[4]&0xF)<<8|rx_data[5];
 				
@@ -232,12 +232,12 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 				DM8009_READ_data_1[6] = rx_data[6];
 				DM8009_READ_data_1[7] = rx_data[7];
 				rx_flag = 1;
-        break;
+                break;
 			}				
 			case 0x12:
 			{
-        //get motor id
-        DM8009_READ_data_2[0] = rx_data[1]<<8|rx_data[2];
+                //get motor id
+                DM8009_READ_data_2[0] = rx_data[1]<<8|rx_data[2];
 				DM8009_READ_data_2[1] = rx_data[3]<<4|(rx_data[4]>>4);
 				DM8009_READ_data_2[2] = (rx_data[4]&0xF)<<8|rx_data[5];
 				
@@ -248,12 +248,12 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 				DM8009_READ_data_2[6] = rx_data[6];
 				DM8009_READ_data_2[7] = rx_data[7];
 				rx_flag = 1;
-        break;
+                break;
 			}				
 			case 0x13:
 			{
-        //get motor id
-        DM8009_READ_data_3[0] = rx_data[1]<<8|rx_data[2];
+                //get motor id
+                DM8009_READ_data_3[0] = rx_data[1]<<8|rx_data[2];
 				DM8009_READ_data_3[1] = rx_data[3]<<4|(rx_data[4]>>4);
 				DM8009_READ_data_3[2] = (rx_data[4]&0xF)<<8|rx_data[5];
 				

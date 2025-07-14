@@ -9,6 +9,6 @@ CMake Deprecation Warning:
 
 
 -- Minimal optimization, debug info included
--- Configuring done (0.1s)
--- Generating done (0.0s)
+-- Configuring done (0.3s)
+-- Generating done (0.1s)
 -- Build files have been written to: D:/RoboMaster_git/motor_mit_control/cmake-build-debug

@@ -88,8 +88,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/MOTOR_CONTROL_TASK.c.obj.d"
   "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/can_comm.c.obj"
   "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/can_comm.c.obj.d"
-  "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj"
-  "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/motor_control.c.obj.d"
   "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj"
   "CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj.d"
   "motor_mit_control.elf"

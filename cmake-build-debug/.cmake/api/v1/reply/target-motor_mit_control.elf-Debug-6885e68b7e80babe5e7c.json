@@ -279,13 +279,12 @@
 				131,
 				132,
 				133,
+				140,
 				141,
 				142,
 				143,
 				144,
-				145,
-				146,
-				147
+				145
 			]
 		},
 		{
@@ -589,8 +588,7 @@
 				136,
 				137,
 				138,
-				139,
-				140
+				139
 			]
 		},
 		{
@@ -636,13 +634,12 @@
 				131,
 				132,
 				133,
+				140,
 				141,
 				142,
 				143,
 				144,
-				145,
-				146,
-				147
+				145
 			]
 		},
 		{
@@ -653,7 +650,7 @@
 				24,
 				55,
 				86,
-				148
+				146
 			]
 		}
 	],
@@ -1396,11 +1393,6 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "codemf/Inc/motor_control.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"path" : "codemf/Inc/uart_printf.h",
 			"sourceGroupIndex" : 0
 		},
@@ -1432,12 +1424,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "codemf/Src/can_comm.c",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "codemf/Src/motor_control.c",
 			"sourceGroupIndex" : 1
 		},
 		{
