@@ -7,14 +7,15 @@
 
 #include "main.h"
 
+#define CAN_SLAVE_ID        0x01
 
 #define CMD_MOTOR_MODE      0x01
 #define CMD_RESET_MODE      0x02
 #define CMD_ZERO_POSITION   0x03
 
 
-#define P_MIN -95.5f    // Radians
-#define P_MAX 95.5f
+#define P_MIN -12.5f    // Radians
+#define P_MAX 12.5f
 #define V_MIN -45.0f    // Rad/s
 #define V_MAX 45.0f
 #define KP_MIN 0.0f     // N-m/rad
@@ -29,7 +30,8 @@
 void CanComm_Init(void);
 void CanComm_SendControlPara(float f_p, float f_v, float f_kp, float f_kd, float f_t);
 void CanComm_ControlCmd(uint8_t cmd);
-float CanComm_GetCurVelocity(void);
+float can_get_speed(void);
+float can_get_angle(void);
 
 
 #endif //MOTOR_MIT_CONTROL_CAN_COMM_H

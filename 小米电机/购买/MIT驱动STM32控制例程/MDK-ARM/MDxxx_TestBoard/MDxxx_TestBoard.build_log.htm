@@ -21,13 +21,25 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
 Dialog DLL:      TARMCM1.DLL V1.14.6.0
  
 <h2>Project:</h2>
-D:\小米电机\购买\MIT驱动STM32控制例程\MDK-ARM\MDxxx_TestBoard.uvprojx
-Project File Date:  03/04/2025
+D:\RoboMaster_git\motor_mit_control\小米电机\购买\MIT驱动STM32控制例程\MDK-ARM\MDxxx_TestBoard.uvprojx
+Project File Date:  06/27/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\keil5STM32\app\ARM\ARMCC\Bin'
 Build target 'MDxxx_TestBoard'
-"MDxxx_TestBoard\MDxxx_TestBoard.axf" - 0 Error(s), 0 Warning(s).
+compiling motor_control.c...
+..\Src\motor_control.c(40): error:  #20: identifier "bool" is undefined
+  bool MotorControl_PositionHandler(void)
+..\Src\motor_control.c(65): error:  #20: identifier "false" is undefined
+              return false;                           /**!< 完成整个电机周期的控制 */
+..\Src\motor_control.c(70): error:  #20: identifier "true" is undefined
+      return true;
+..\Src\motor_control.c(79): error:  #20: identifier "bool" is undefined
+  bool MotorControl_velocityHandler(void)
+..\Src\motor_control.c(89): error:  #20: identifier "true" is undefined
+      return true;
+..\Src\motor_control.c: 0 warnings, 5 errors
+"MDxxx_TestBoard\MDxxx_TestBoard.axf" - 5 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,6 +62,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE@6.1.0
+Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

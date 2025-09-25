@@ -11,12 +11,13 @@
 
 extern CAN_HandleTypeDef hcan1;
 
-#define CAN_SLAVE_ID        0x01
+
 
 #define LIMIT_MIN_MAX(x,min,max) (x) = (((x)<=(min))?(min):(((x)>=(max))?(max):(x)))
 
+volatile float angle = 0;
+volatile float speed = 0;
 
-volatile float CurVelocity = 0;
 
 /**
   * @brief  CAN接口初始化
@@ -137,11 +138,11 @@ void CanComm_ControlCmd(uint8_t cmd)
             buf[7] = 0xFC;
             break;
 
-        case CMD_RESET_MODE:
+        case CMD_RESET_MODE://
             buf[7] = 0xFD;
             break;
 
-        case CMD_ZERO_POSITION:
+        case CMD_ZERO_POSITION://设置零点
             buf[7] = 0xFE;
             break;
 
@@ -159,6 +160,7 @@ void CanComm_ControlCmd(uint8_t cmd)
   */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
+    uint16_t tmp_angle;
     uint16_t tmp_value;
 
     CAN_RxHeaderTypeDef RxHead; /**!< can通信协议头 */
@@ -167,14 +169,21 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 
     if(data[0] == CAN_SLAVE_ID)
     {
+        tmp_angle = (data[1] << 8) | data[2];
         tmp_value = (data[3]<<4)|(data[4]>>4);
-        CurVelocity = uint_to_float(tmp_value, V_MIN, V_MAX, 12);
+        angle = uint_to_float(tmp_angle, P_MIN, P_MAX, 16);
+        speed = uint_to_float(tmp_value, V_MIN, V_MAX, 12);
     }
 }
 
-float CanComm_GetCurVelocity(void)
+float can_get_speed(void)
 {
-    return CurVelocity;
+    return speed;
+}
+
+float can_get_angle(void)
+{
+    return angle;
 }
 
 

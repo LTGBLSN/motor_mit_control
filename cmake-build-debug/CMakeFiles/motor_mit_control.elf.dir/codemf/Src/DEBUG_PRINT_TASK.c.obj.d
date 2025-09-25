@@ -35,4 +35,35 @@ CMakeFiles/motor_mit_control.elf.dir/codemf/Src/DEBUG_PRINT_TASK.c.obj: \
  D:\RoboMaster_git\motor_mit_control\Middlewares\Third_Party\FreeRTOS\Source\include/queue.h \
  D:\RoboMaster_git\motor_mit_control\Middlewares\Third_Party\FreeRTOS\Source\include/event_groups.h \
  D:\RoboMaster_git\motor_mit_control\Middlewares\Third_Party\FreeRTOS\Source\include/timers.h \
- D:\RoboMaster_git\motor_mit_control\codemf\Inc/uart_printf.h
+ D:\RoboMaster_git\motor_mit_control\codemf\Inc/uart_printf.h \
+ D:\RoboMaster_git\motor_mit_control\codemf\Inc/can_comm.h \
+ D:\RoboMaster_git\motor_mit_control\Core\Inc/main.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal.h \
+ D:\RoboMaster_git\motor_mit_control\Core\Inc/stm32f4xx_hal_conf.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_def.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\CMSIS\Device\ST\STM32F4xx\Include/stm32f4xx.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\CMSIS\Device\ST\STM32F4xx\Include/stm32f407xx.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\CMSIS\Include/core_cm4.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\CMSIS\Include/cmsis_version.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\CMSIS\Include/cmsis_compiler.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\CMSIS\Include/cmsis_gcc.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\CMSIS\Include/mpu_armv7.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\CMSIS\Device\ST\STM32F4xx\Include/system_stm32f4xx.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/Legacy/stm32_hal_legacy.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc_ex.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_gpio.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_gpio_ex.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_exti.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_dma.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_dma_ex.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_cortex.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_can.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ex.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ramfunc.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr_ex.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim_ex.h \
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h

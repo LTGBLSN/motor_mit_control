@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "string.h"
-extern UART_HandleTypeDef huart1;
-void usart1_printf(const char *fmt, ...)
+extern UART_HandleTypeDef huart6;
+void usart6_printf(const char *fmt, ...)
 {
     static uint8_t tx_buf[256] = {0};
     static va_list ap;
@@ -16,7 +16,7 @@ void usart1_printf(const char *fmt, ...)
 
     va_end(ap);
 
-    HAL_UART_Transmit(&huart1,tx_buf, len,100);//在这修改发送的串口，包括上面的‘extern’后面的
+    HAL_UART_Transmit(&huart6,tx_buf, len,100);//在这修改发送的串口，包括上面的‘extern’后面的
 
 }
 

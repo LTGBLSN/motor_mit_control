@@ -41,5 +41,4 @@ mdxxx_testboard\main.o: D:\keil5STM32\app\ARM\ARMCC\Bin\..\include\string.h
 mdxxx_testboard\main.o: ../Inc/button.h
 mdxxx_testboard\main.o: ../Inc/led.h
 mdxxx_testboard\main.o: ../Inc/can_comm.h
-mdxxx_testboard\main.o: ../Inc/motor_control.h
 mdxxx_testboard\main.o: D:\keil5STM32\app\ARM\ARMCC\Bin\..\include\stdbool.h

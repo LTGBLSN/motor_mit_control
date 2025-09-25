@@ -1,5 +1,5 @@
 mdxxx_testboard\motor_control.o: ..\Src\motor_control.c
-mdxxx_testboard\motor_control.o: ../Inc/motor_control.h
+mdxxx_testboard\motor_control.o: ../Inc/can_comm.h
 mdxxx_testboard\motor_control.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32F0xx_hal.h
 mdxxx_testboard\motor_control.o: ../Inc/stm32f0xx_hal_conf.h
 mdxxx_testboard\motor_control.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h
@@ -31,6 +31,4 @@ mdxxx_testboard\motor_control.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_h
 mdxxx_testboard\motor_control.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 mdxxx_testboard\motor_control.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 mdxxx_testboard\motor_control.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
-mdxxx_testboard\motor_control.o: D:\keil5STM32\app\ARM\ARMCC\Bin\..\include\stdbool.h
-mdxxx_testboard\motor_control.o: ../Inc/can_comm.h
 mdxxx_testboard\motor_control.o: D:\keil5STM32\app\ARM\ARMCC\Bin\..\include\math.h

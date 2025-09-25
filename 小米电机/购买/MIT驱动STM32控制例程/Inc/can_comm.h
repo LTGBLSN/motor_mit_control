@@ -24,6 +24,6 @@
 void CanComm_Init(void);
 void CanComm_SendControlPara(float f_p, float f_v, float f_kp, float f_kd, float f_t);
 void CanComm_ControlCmd(uint8_t cmd);
-float CanComm_GetCurVelocity(void);
+float can_get_speed(void);
 
 #endif

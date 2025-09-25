@@ -9,17 +9,18 @@
 void MOTOR_CONTROL_TASK()
 {
     osDelay(3000);
+//    CanComm_ControlCmd(CMD_RESET_MODE);
     CanComm_ControlCmd(CMD_MOTOR_MODE);
     osDelay(100);
     CanComm_SendControlPara(0,0,0,0,0);
-//    osDelay(100);
+//    osDelay(2000);
 //    CanComm_ControlCmd(CMD_ZERO_POSITION);
-    osDelay(10);
+//    osDelay(10);
 
     while (1)
     {
 
-        CanComm_SendControlPara(0, 0, 0, 0.0f, 0.00f);
+        CanComm_SendControlPara(0, 0, 0, 0.0f, -0.7f);
         osDelay(10);
 
 

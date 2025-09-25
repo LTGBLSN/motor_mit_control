@@ -4,12 +4,15 @@
 
 #include "cmsis_os.h"
 #include "uart_printf.h"
+#include "can_comm.h"
+
 void DEBUG_PRINT_TASK()
 {
     while (1)
     {
-
-        usart1_printf("hello word \r\n");
+        float speed = can_get_speed();
+        float angle = can_get_angle();
+        usart6_printf("%f,%f \r\n", speed,angle);
         osDelay(10);
 
         osDelay(1);
