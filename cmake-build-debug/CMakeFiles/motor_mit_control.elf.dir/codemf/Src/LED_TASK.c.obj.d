@@ -38,6 +38,7 @@ CMakeFiles/motor_mit_control.elf.dir/codemf/Src/LED_TASK.c.obj: \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim.h \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim_ex.h \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h \
+ D:\RoboMaster_git\motor_mit_control\codemf\Inc/can_comm.h \
  D:\RoboMaster_git\motor_mit_control\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS/cmsis_os.h \
  D:\RoboMaster_git\motor_mit_control\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
  D:\RoboMaster_git\motor_mit_control\Core\Inc/FreeRTOSConfig.h \

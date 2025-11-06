@@ -13,11 +13,59 @@ extern CAN_HandleTypeDef hcan1;
 
 
 
-#define LIMIT_MIN_MAX(x,min,max) (x) = (((x)<=(min))?(min):(((x)>=(max))?(max):(x)))
+
 
 volatile float angle = 0;
 volatile float speed = 0;
 
+//8个电机的参数声明
+struct xiaomi_motor xiaomimotors[8]= {
+        {0x01,0x01,0,0,0,0,0,
+                0,0,0,0},
+        {0x02,0x01,0,0,0,0,0,
+                0,0,0,0},
+        {0x03,0x01,0,0,0,0,0,
+                0,0,0,0},
+        {0x04,0x01,0,0,0,0,0,
+                0,0,0,0},
+
+
+        {0x01,0x02,0,0,0,0,0,
+                0,0,0,0},
+        {0x02,0x02,0,0,0,0,0,
+                0,0,0,0},
+        {0x03,0x02,0,0,0,0,0,
+                0,0,0,0},
+        {0x04,0x02,0,0,0,0,0,
+                0,0,0,0}
+};
+//电机总数
+int8_t num_xiaomimotors = 8;
+
+/**
+  * @brief  Converts a float to an unsigned int, given range and number of bits
+  * @param
+  * @retval
+  */
+static uint16_t float_to_uint(float x, float x_min, float x_max, uint8_t bits)
+{
+    float span = x_max - x_min;
+    float offset = x_min;
+
+    return (uint16_t) ((x-offset)*((float)((1<<bits)-1))/span);
+}
+
+/**
+  * @brief  converts unsigned int to float, given range and number of bits
+  * @param
+  * @retval
+  */
+static float uint_to_float(int x_int, float x_min, float x_max, int bits)
+{
+    float span = x_max - x_min;
+    float offset = x_min;
+    return ((float)x_int)*span/((float)((1<<bits)-1)) + offset;
+}
 
 /**
   * @brief  CAN接口初始化
@@ -45,50 +93,9 @@ void CanComm_Init(void)
 
 }
 
-/**
-  * @brief  Converts a float to an unsigned int, given range and number of bits
-  * @param
-  * @retval
-  */
-static uint16_t float_to_uint(float x, float x_min, float x_max, uint8_t bits)
-{
-    float span = x_max - x_min;
-    float offset = x_min;
 
-    return (uint16_t) ((x-offset)*((float)((1<<bits)-1))/span);
-}
 
-/**
-  * @brief  converts unsigned int to float, given range and number of bits
-  * @param
-  * @retval
-  */
-static float uint_to_float(int x_int, float x_min, float x_max, int bits)
-{
-    float span = x_max - x_min;
-    float offset = x_min;
-    return ((float)x_int)*span/((float)((1<<bits)-1)) + offset;
-}
 
-/* 把buf中的内容通过CAN接口发送出去 */
-static void CanTransmit(uint8_t *buf, uint8_t len)
-{
-    CAN_TxHeaderTypeDef TxHead;             /**!< can通信发送协议头 */
-    uint32_t canTxMailbox;
-
-    if((buf != NULL) && (len != 0))
-    {
-        TxHead.StdId    = CAN_SLAVE_ID;     /* 指定标准标识符，该值在0x00-0x7FF */
-        TxHead.IDE      = CAN_ID_STD;       /* 指定将要传输消息的标识符类型 */
-        TxHead.RTR      = CAN_RTR_DATA;     /* 指定消息传输帧类型 */
-        TxHead.DLC      = len;              /* 指定将要传输的帧长度 */
-
-        if(HAL_CAN_AddTxMessage(&hcan1, &TxHead, buf, (uint32_t *)&canTxMailbox) == HAL_OK )
-        {
-
-        }
-    }
-}
 
 /**
   * @brief  Can总线发送控制参数
@@ -96,9 +103,16 @@ static void CanTransmit(uint8_t *buf, uint8_t len)
   * @retval
   */
   //p:期望位置 v:期望速度 kp: kd: t:前馈扭矩
-void CanComm_SendControlPara(float f_p, float f_v, float f_kp, float f_kd, float f_t)
+  //禁止发除电流外的参数，固件bug
+void CanComm_SendControlPara(struct xiaomi_motor xiaomimotor_para)
 {
-    uint16_t p, v, kp, kd, t;
+    float f_p = 0 ;
+    float f_v = 0 ;
+    float f_kp = 0 ;
+    float f_kd = 0 ;
+    float f_t = xiaomimotor_para.give_tor;
+
+    uint16_t p, v, kp, kd, t;//最终发送，经过转换的
     uint8_t buf[8];
 
     /* 限制输入的参数在定义的范围内 */
@@ -126,15 +140,18 @@ void CanComm_SendControlPara(float f_p, float f_v, float f_kp, float f_kd, float
     buf[7] = t&0xff;
 
     /* 通过CAN接口把buf中的内容发送出去 */
-    CanTransmit(buf, sizeof(buf));
+    CanTransmit(buf, sizeof(buf),xiaomimotor_para.can_channel,xiaomimotor_para.can_id);
 }
 
-void CanComm_ControlCmd(uint8_t cmd)
+
+
+/*小米电机的特殊帧，用于使能、零点设置、失能*/
+void CanComm_ControlCmd(uint8_t cmd , struct xiaomi_motor xiaomimotor_cmd)
 {
     uint8_t buf[8] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00};
     switch(cmd)
     {
-        case CMD_MOTOR_MODE:
+        case CMD_MOTOR_MODE://
             buf[7] = 0xFC;
             break;
 
@@ -149,7 +166,30 @@ void CanComm_ControlCmd(uint8_t cmd)
         default:
             return; /* 直接退出函数 */
     }
-    CanTransmit(buf, sizeof(buf));
+    CanTransmit(buf, sizeof(buf), xiaomimotor_cmd.can_channel, xiaomimotor_cmd.can_id);
+}
+
+
+
+
+
+/* 把buf中的内容通过CAN接口发送出去 */
+static void CanTransmit(uint8_t *buf, uint8_t len ,uint8_t can_channel , uint8_t motor_id)
+{
+    CAN_TxHeaderTypeDef TxHead;             /**!< can通信发送协议头 */
+    uint32_t canTxMailbox;
+
+    if((buf != NULL) && (len != 0))
+    {
+        TxHead.StdId    = motor_id;     /* 指定标准标识符，该值在0x00-0x7FF */
+        TxHead.IDE      = CAN_ID_STD;       /* 指定将要传输消息的标识符类型 */
+        TxHead.RTR      = CAN_RTR_DATA;     /* 指定消息传输帧类型 */
+        TxHead.DLC      = len;              /* 指定将要传输的帧长度 */
+
+        if(HAL_CAN_AddTxMessage(&hcan1, &TxHead, buf, (uint32_t *)&canTxMailbox) == HAL_OK )
+        {
+        }
+    }
 }
 
 
@@ -160,19 +200,34 @@ void CanComm_ControlCmd(uint8_t cmd)
   */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
-    uint16_t tmp_angle;
-    uint16_t tmp_value;
-
+    int p_int;
+    int v_int;
+    int t_int;
     CAN_RxHeaderTypeDef RxHead; /**!< can通信协议头 */
     uint8_t data[8];
     HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHead, data);
 
-    if(data[0] == CAN_SLAVE_ID)
+    switch (data[0])
     {
-        tmp_angle = (data[1] << 8) | data[2];
-        tmp_value = (data[3]<<4)|(data[4]>>4);
-        angle = uint_to_float(tmp_angle, P_MIN, P_MAX, 16);
-        speed = uint_to_float(tmp_value, V_MIN, V_MAX, 12);
+        case (0x01):
+        case (0x02):
+        case (0x03):
+        case (0x04):
+        {
+            p_int = (data[1] << 8) | data[2];
+            v_int = (data[3] << 4) | (data[4] >> 4);
+            t_int = ((data[4] & 0xF) << 8) | data[5];
+            xiaomimotors[data[0]-0x01].last_angle = xiaomimotors[data[0]-0x01].return_angle ;
+            xiaomimotors[data[0]-0x01].return_angle = uint_to_float(p_int, P_MIN, P_MAX, 16);
+            xiaomimotors[data[0]-0x01].return_speed = uint_to_float(v_int, V_MIN, V_MAX, 12);
+            xiaomimotors[data[0]-0x01].return_tor = uint_to_float(t_int, T_MIN, T_MAX, 12);
+
+            break;
+        }
+        default:
+        {
+            break;
+        }
     }
 }
 

@@ -40,7 +40,8 @@ CMakeFiles/motor_mit_control.elf.dir/Core/Src/can.c.obj: D:/RoboMaster_git/motor
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
-  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h
 
 CMakeFiles/motor_mit_control.elf.dir/Core/Src/dma.c.obj: D:/RoboMaster_git/motor_mit_control/Core/Src/dma.c \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
@@ -81,7 +82,8 @@ CMakeFiles/motor_mit_control.elf.dir/Core/Src/dma.c.obj: D:/RoboMaster_git/motor
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
-  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h
 
 CMakeFiles/motor_mit_control.elf.dir/Core/Src/freertos.c.obj: D:/RoboMaster_git/motor_mit_control/Core/Src/freertos.c \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
@@ -145,7 +147,8 @@ CMakeFiles/motor_mit_control.elf.dir/Core/Src/freertos.c.obj: D:/RoboMaster_git/
   D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
   D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
   D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
-  D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h
+  D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h
 
 CMakeFiles/motor_mit_control.elf.dir/Core/Src/gpio.c.obj: D:/RoboMaster_git/motor_mit_control/Core/Src/gpio.c \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
@@ -186,7 +189,8 @@ CMakeFiles/motor_mit_control.elf.dir/Core/Src/gpio.c.obj: D:/RoboMaster_git/moto
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
-  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h
 
 CMakeFiles/motor_mit_control.elf.dir/Core/Src/main.c.obj: D:/RoboMaster_git/motor_mit_control/Core/Src/main.c \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
@@ -299,7 +303,8 @@ CMakeFiles/motor_mit_control.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: D:/RoboMa
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
-  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h
 
 CMakeFiles/motor_mit_control.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj: D:/RoboMaster_git/motor_mit_control/Core/Src/stm32f4xx_hal_timebase_tim.c \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
@@ -379,7 +384,8 @@ CMakeFiles/motor_mit_control.elf.dir/Core/Src/stm32f4xx_it.c.obj: D:/RoboMaster_
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
-  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h
 
 CMakeFiles/motor_mit_control.elf.dir/Core/Src/syscalls.c.obj: D:/RoboMaster_git/motor_mit_control/Core/Src/syscalls.c \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
@@ -527,7 +533,8 @@ CMakeFiles/motor_mit_control.elf.dir/Core/Src/usart.c.obj: D:/RoboMaster_git/mot
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
-  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h
 
 CMakeFiles/motor_mit_control.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
@@ -1569,7 +1576,8 @@ CMakeFiles/motor_mit_control.elf.dir/codemf/Src/CAN_receive.c.obj: D:/RoboMaster
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
-  D:/RoboMaster_git/motor_mit_control/codemf/Inc/CAN_receive.h
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/CAN_receive.h \
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h
 
 CMakeFiles/motor_mit_control.elf.dir/codemf/Src/DEBUG_PRINT_TASK.c.obj: D:/RoboMaster_git/motor_mit_control/codemf/Src/DEBUG_PRINT_TASK.c \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
@@ -1699,7 +1707,8 @@ CMakeFiles/motor_mit_control.elf.dir/codemf/Src/LED_TASK.c.obj: D:/RoboMaster_gi
   D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
   D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
   D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
-  D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h
+  D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h
 
 CMakeFiles/motor_mit_control.elf.dir/codemf/Src/MOTOR_CONTROL_TASK.c.obj: D:/RoboMaster_git/motor_mit_control/codemf/Src/MOTOR_CONTROL_TASK.c \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
@@ -1873,7 +1882,8 @@ CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj: D:/RoboMaster
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
-  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+  D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h
 
 
 D:/RoboMaster_git/motor_mit_control/Core/Src/can.c:
@@ -1929,8 +1939,6 @@ C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h:
 D:/RoboMaster_git/motor_mit_control/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
 D:/RoboMaster_git/motor_mit_control/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:
-
-D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 
 D:/RoboMaster_git/motor_mit_control/Core/Inc/stm32f4xx_it.h:
 
@@ -1996,6 +2004,10 @@ D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/CMSI
 
 D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 
+C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_time.h:
+
+D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h:
+
 D:/RoboMaster_git/motor_mit_control/Core/Src/dma.c:
 
 D:/RoboMaster_git/motor_mit_control/Core/Inc/dma.h:
@@ -2024,6 +2036,8 @@ D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/incl
 
 D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 
+D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
+
 D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
 D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
@@ -2045,10 +2059,6 @@ D:/RoboMaster_git/motor_mit_control/codemf/Inc/CAN_receive.h:
 D:/RoboMaster_git/motor_mit_control/codemf/Inc/DEBUG_PRINT_TASK.h:
 
 D:/RoboMaster_git/motor_mit_control/codemf/Inc/LED_TASK.h:
-
-C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_time.h:
-
-D:/RoboMaster_git/motor_mit_control/codemf/Inc/can_comm.h:
 
 D:/RoboMaster_git/motor_mit_control/Core/Src/stm32f4xx_hal_msp.c:
 

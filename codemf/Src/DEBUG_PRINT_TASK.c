@@ -10,10 +10,8 @@ void DEBUG_PRINT_TASK()
 {
     while (1)
     {
-        float speed = can_get_speed();
-        float angle = can_get_angle();
-        usart6_printf("%f,%f \r\n", speed,angle);
-        osDelay(10);
+        usart6_printf("%f,%f \r\n",xiaomimotors[0].return_angle,
+                      xiaomimotors[1].return_angle);
 
         osDelay(1);
 //

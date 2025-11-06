@@ -38,6 +38,7 @@ CMakeFiles/motor_mit_control.elf.dir/codemf/Src/uart_printf.c.obj: \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim.h \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim_ex.h \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h \
+ D:\RoboMaster_git\motor_mit_control\codemf\Inc/can_comm.h \
  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h \
  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h \

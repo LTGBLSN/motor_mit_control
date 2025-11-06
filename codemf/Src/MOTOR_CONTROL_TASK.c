@@ -9,18 +9,23 @@
 void MOTOR_CONTROL_TASK()
 {
     osDelay(3000);
-//    CanComm_ControlCmd(CMD_RESET_MODE);
-    CanComm_ControlCmd(CMD_MOTOR_MODE);
+
+    CanComm_ControlCmd(CMD_MOTOR_MODE,xiaomimotors[0]);
+    CanComm_ControlCmd(CMD_MOTOR_MODE,xiaomimotors[1]);
     osDelay(100);
-    CanComm_SendControlPara(0,0,0,0,0);
-//    osDelay(2000);
-//    CanComm_ControlCmd(CMD_ZERO_POSITION);
-//    osDelay(10);
+    CanComm_SendControlPara(xiaomimotors[0]);
+    CanComm_SendControlPara(xiaomimotors[1]);
 
     while (1)
     {
+        xiaomimotors[0].give_tor = 0.0f ;
+        xiaomimotors[1].give_tor = 0.0f ;
+        CanComm_ControlCmd(CMD_MOTOR_MODE,xiaomimotors[0]);
+        osDelay(1);//±ØÒª
+        CanComm_ControlCmd(CMD_MOTOR_MODE,xiaomimotors[1]);
 
-        CanComm_SendControlPara(0, 0, 0, 0.0f, -0.7f);
+        CanComm_SendControlPara(xiaomimotors[0]);
+        CanComm_SendControlPara(xiaomimotors[1]);
         osDelay(10);
 
 

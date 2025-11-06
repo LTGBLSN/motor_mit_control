@@ -25,11 +25,32 @@
 #define T_MIN -18.0f
 #define T_MAX 18.0f
 
+#define LIMIT_MIN_MAX(x,min,max) (x) = (((x)<=(min))?(min):(((x)>=(max))?(max):(x)))
 
+
+
+struct xiaomi_motor{
+    uint8_t can_id;//id
+    uint8_t can_channel;//can1还是can2
+    uint8_t state;//状态
+    float last_angle;//上一次的位置
+    float return_angle;//当前位置
+    float return_speed;//回传速度
+    float compute_speed;//微分后的速度
+    float return_tor;//回传力矩
+    float Tmos;//mos温度
+    float Tcoil;//线圈温度
+    float give_tor;//发送的力矩
+};
+
+
+extern struct xiaomi_motor xiaomimotors[8];
+extern int8_t num_xiaomimotors ;
 
 void CanComm_Init(void);
-void CanComm_SendControlPara(float f_p, float f_v, float f_kp, float f_kd, float f_t);
-void CanComm_ControlCmd(uint8_t cmd);
+static void CanTransmit(uint8_t *buf, uint8_t len ,uint8_t can_channel , uint8_t motor_id);
+void CanComm_SendControlPara(struct xiaomi_motor xiaomimotor_para);
+void CanComm_ControlCmd(uint8_t cmd , struct xiaomi_motor xiaomimotor_cmd);
 float can_get_speed(void);
 float can_get_angle(void);
 

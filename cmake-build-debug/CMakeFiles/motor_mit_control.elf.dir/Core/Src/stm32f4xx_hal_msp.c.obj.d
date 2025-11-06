@@ -37,4 +37,5 @@ CMakeFiles/motor_mit_control.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr_ex.h \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim.h \
  D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim_ex.h \
- D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h
+ D:\RoboMaster_git\motor_mit_control\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h \
+ D:\RoboMaster_git\motor_mit_control\codemf\Inc/can_comm.h

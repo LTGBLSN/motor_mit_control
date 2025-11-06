@@ -31,6 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "can_comm.h"
 
 /* USER CODE END Includes */
 
@@ -53,7 +54,9 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-extern uint8_t en_control ;
+
+
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
