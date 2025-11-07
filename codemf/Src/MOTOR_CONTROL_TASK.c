@@ -24,7 +24,6 @@ void MOTOR_CONTROL_TASK()
         xiaomimotors[5].give_tor = 0.2f ;
 
         CanComm_SendControlPara(xiaomimotors[0]);
-        osDelay(1);
         CanComm_SendControlPara(xiaomimotors[5]);
         osDelay(10);
 
