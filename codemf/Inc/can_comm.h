@@ -51,8 +51,6 @@ void CanComm_Init(void);
 static void CanTransmit(uint8_t *buf, uint8_t len ,uint8_t can_channel , uint8_t motor_id);
 void CanComm_SendControlPara(struct xiaomi_motor xiaomimotor_para);
 void CanComm_ControlCmd(uint8_t cmd , struct xiaomi_motor xiaomimotor_cmd);
-float can_get_speed(void);
-float can_get_angle(void);
 
 
 #endif //MOTOR_MIT_CONTROL_CAN_COMM_H

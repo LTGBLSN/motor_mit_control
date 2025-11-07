@@ -10,6 +10,7 @@
 
 
 extern CAN_HandleTypeDef hcan1;
+extern CAN_HandleTypeDef hcan2;
 
 
 
@@ -78,11 +79,11 @@ void CanComm_Init(void)
 
     sCAN_Filter.FilterBank = 0;                         /* 指定将被初始化的过滤器 */
     sCAN_Filter.FilterMode = CAN_FILTERMODE_IDMASK;     /* 过滤模式为屏蔽位模式 */
-    sCAN_Filter.FilterScale = CAN_FILTERSCALE_16BIT;    /* 指定滤波器的规模 */
-    sCAN_Filter.FilterIdHigh = 00;
-    sCAN_Filter.FilterIdLow = 00;
-    sCAN_Filter.FilterMaskIdHigh = 00;
-    sCAN_Filter.FilterMaskIdLow = 00;
+    sCAN_Filter.FilterScale = CAN_FILTERSCALE_32BIT;    /* 指定滤波器的规模 */
+    sCAN_Filter.FilterIdHigh = 0x0000;
+    sCAN_Filter.FilterIdLow = 0x0000;
+    sCAN_Filter.FilterMaskIdHigh = 0x0000;
+    sCAN_Filter.FilterMaskIdLow = 0x0000;
     sCAN_Filter.FilterFIFOAssignment = CAN_FILTER_FIFO0;
     sCAN_Filter.FilterActivation = ENABLE;              /* 启用或禁用过滤器 */
     sCAN_Filter.SlaveStartFilterBank = 0;               /* 选择启动从过滤器组 */
@@ -90,6 +91,13 @@ void CanComm_Init(void)
     HAL_CAN_ConfigFilter(&hcan1, &sCAN_Filter);
     HAL_CAN_Start(&hcan1);               /* 开启CAN通信 */
     HAL_CAN_ActivateNotification(&hcan1,CAN_IT_RX_FIFO0_MSG_PENDING);    /* 开启挂起中断允许 */
+
+    sCAN_Filter.SlaveStartFilterBank = 14;
+    sCAN_Filter.FilterBank = 14;
+    HAL_CAN_ConfigFilter(&hcan2, &sCAN_Filter);
+    HAL_CAN_Start(&hcan2);               /* 开启CAN通信 */
+    HAL_CAN_ActivateNotification(&hcan2,CAN_IT_RX_FIFO0_MSG_PENDING);    /* 开启挂起中断允许 */
+
 
 }
 
@@ -176,20 +184,42 @@ void CanComm_ControlCmd(uint8_t cmd , struct xiaomi_motor xiaomimotor_cmd)
 /* 把buf中的内容通过CAN接口发送出去 */
 static void CanTransmit(uint8_t *buf, uint8_t len ,uint8_t can_channel , uint8_t motor_id)
 {
-    CAN_TxHeaderTypeDef TxHead;             /**!< can通信发送协议头 */
-    uint32_t canTxMailbox;
-
-    if((buf != NULL) && (len != 0))
+    if(can_channel == 0x01)
     {
-        TxHead.StdId    = motor_id;     /* 指定标准标识符，该值在0x00-0x7FF */
-        TxHead.IDE      = CAN_ID_STD;       /* 指定将要传输消息的标识符类型 */
-        TxHead.RTR      = CAN_RTR_DATA;     /* 指定消息传输帧类型 */
-        TxHead.DLC      = len;              /* 指定将要传输的帧长度 */
+        CAN_TxHeaderTypeDef can1_TxHead;             /**!< can通信发送协议头 */
+        uint32_t can1_TxMailbox;
 
-        if(HAL_CAN_AddTxMessage(&hcan1, &TxHead, buf, (uint32_t *)&canTxMailbox) == HAL_OK )
+        if((buf != NULL) && (len != 0))
         {
+            can1_TxHead.StdId    = motor_id;     /* 指定标准标识符，该值在0x00-0x7FF */
+            can1_TxHead.IDE      = CAN_ID_STD;       /* 指定将要传输消息的标识符类型 */
+            can1_TxHead.RTR      = CAN_RTR_DATA;     /* 指定消息传输帧类型 */
+            can1_TxHead.DLC      = len;              /* 指定将要传输的帧长度 */
+
+            if(HAL_CAN_AddTxMessage(&hcan1, &can1_TxHead, buf, (uint32_t *)&can1_TxMailbox) == HAL_OK )
+            {
+            }
         }
     }
+    if(can_channel == 0x02)
+    {
+        CAN_TxHeaderTypeDef can2_TxHead;             /**!< can通信发送协议头 */
+        uint32_t can2_TxMailbox;
+
+        if((buf != NULL) && (len != 0))
+        {
+            can2_TxHead.StdId    = motor_id;     /* 指定标准标识符，该值在0x00-0x7FF */
+            can2_TxHead.IDE      = CAN_ID_STD;       /* 指定将要传输消息的标识符类型 */
+            can2_TxHead.RTR      = CAN_RTR_DATA;     /* 指定消息传输帧类型 */
+            can2_TxHead.DLC      = len;              /* 指定将要传输的帧长度 */
+
+            if(HAL_CAN_AddTxMessage(&hcan2, &can2_TxHead, buf, (uint32_t *)&can2_TxMailbox) == HAL_OK )
+            {
+            }
+        }
+    }
+
+
 }
 
 
@@ -200,48 +230,80 @@ static void CanTransmit(uint8_t *buf, uint8_t len ,uint8_t can_channel , uint8_t
   */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
-    int p_int;
-    int v_int;
-    int t_int;
-    CAN_RxHeaderTypeDef RxHead; /**!< can通信协议头 */
-    uint8_t data[8];
-    HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHead, data);
 
-    switch (data[0])
+    if(hcan == &hcan1)
     {
-        case (0x01):
-        case (0x02):
-        case (0x03):
-        case (0x04):
-        {
-            p_int = (data[1] << 8) | data[2];
-            v_int = (data[3] << 4) | (data[4] >> 4);
-            t_int = ((data[4] & 0xF) << 8) | data[5];
-            xiaomimotors[data[0]-0x01].last_angle = xiaomimotors[data[0]-0x01].return_angle ;
-            xiaomimotors[data[0]-0x01].return_angle = uint_to_float(p_int, P_MIN, P_MAX, 16);
-            xiaomimotors[data[0]-0x01].return_speed = uint_to_float(v_int, V_MIN, V_MAX, 12);
-            xiaomimotors[data[0]-0x01].return_tor = uint_to_float(t_int, T_MIN, T_MAX, 12);
+        CAN_RxHeaderTypeDef can1_RxHead; /**!< can通信协议头 */
+        uint8_t can1_data[8];
+        HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &can1_RxHead, can1_data);
 
-            break;
-        }
-        default:
+        switch (can1_data[0])
         {
-            break;
+            case (0x01):
+            case (0x02):
+            case (0x03):
+            case (0x04):
+            {
+                int p_int;
+                int v_int;
+                int t_int;
+
+                p_int = (can1_data[1] << 8) | can1_data[2];
+                v_int = (can1_data[3] << 4) | (can1_data[4] >> 4);
+                t_int = ((can1_data[4] & 0xF) << 8) | can1_data[5];
+                xiaomimotors[can1_data[0] - 0x01].last_angle = xiaomimotors[can1_data[0] - 0x01].return_angle ;
+                xiaomimotors[can1_data[0] - 0x01].return_angle = uint_to_float(p_int, P_MIN, P_MAX, 16);
+                xiaomimotors[can1_data[0] - 0x01].return_speed = uint_to_float(v_int, V_MIN, V_MAX, 12);
+                xiaomimotors[can1_data[0] - 0x01].return_tor = uint_to_float(t_int, T_MIN, T_MAX, 12);
+
+                break;
+            }
+            default:
+            {
+                break;
+            }
         }
     }
+    else if(hcan == &hcan2)
+    {
+
+        CAN_RxHeaderTypeDef can2_RxHead; /**!< can通信协议头 */
+        uint8_t can2_data[8];
+        HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &can2_RxHead, can2_data);
+
+        switch (can2_data[0])
+        {
+            case (0x01):
+            case (0x02):
+            case (0x03):
+            case (0x04):
+            {
+                int p_int;
+                int v_int;
+                int t_int;
+
+                p_int = (can2_data[1] << 8) | can2_data[2];
+                v_int = (can2_data[3] << 4) | (can2_data[4] >> 4);
+                t_int = ((can2_data[4] & 0xF) << 8) | can2_data[5];
+                xiaomimotors[can2_data[0] + 0x03].last_angle = xiaomimotors[can2_data[0] - 0x01].return_angle ;
+                xiaomimotors[can2_data[0] + 0x03].return_angle = uint_to_float(p_int, P_MIN, P_MAX, 16);
+                xiaomimotors[can2_data[0] + 0x03].return_speed = uint_to_float(v_int, V_MIN, V_MAX, 12);
+                xiaomimotors[can2_data[0] + 0x03].return_tor = uint_to_float(t_int, T_MIN, T_MAX, 12);
+
+                break;
+            }
+            default:
+            {
+                break;
+            }
+        }
+    }
+
+
+
+
+
 }
-
-float can_get_speed(void)
-{
-    return speed;
-}
-
-float can_get_angle(void)
-{
-    return angle;
-}
-
-
 
 
 
