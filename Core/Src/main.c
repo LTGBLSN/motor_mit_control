@@ -17,6 +17,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <string.h>
 #include "main.h"
 #include "cmsis_os.h"
 #include "can.h"
@@ -104,6 +105,33 @@ int main(void)
   MX_CAN2_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
+    memset(xiaomimotors, 0, sizeof(xiaomimotors));//«Â¡„
+    xiaomimotors[0].can_id = 0x01 ;
+    xiaomimotors[1].can_id = 0x02 ;
+    xiaomimotors[2].can_id = 0x03 ;
+    xiaomimotors[3].can_id = 0x04 ;
+    xiaomimotors[4].can_id = 0x01 ;
+    xiaomimotors[5].can_id = 0x02 ;
+    xiaomimotors[6].can_id = 0x03 ;
+    xiaomimotors[7].can_id = 0x04 ;
+    xiaomimotors[0].can_channel = 0x01 ;
+    xiaomimotors[1].can_channel = 0x01 ;
+    xiaomimotors[2].can_channel = 0x01 ;
+    xiaomimotors[3].can_channel = 0x01 ;
+    xiaomimotors[4].can_channel = 0x02 ;
+    xiaomimotors[5].can_channel = 0x02 ;
+    xiaomimotors[6].can_channel = 0x02 ;
+    xiaomimotors[7].can_channel = 0x02 ;
+
+    xiaomimotors[0].alpha_speed = 0.1f ;
+    xiaomimotors[1].alpha_speed = 0.1f ;
+    xiaomimotors[2].alpha_speed = 0.1f ;
+    xiaomimotors[3].alpha_speed = 0.1f ;
+    xiaomimotors[4].alpha_speed = 0.1f ;
+    xiaomimotors[5].alpha_speed = 0.1f ;
+    xiaomimotors[6].alpha_speed = 0.1f ;
+    xiaomimotors[7].alpha_speed = 0.1f ;
+
     CanComm_Init();
 
   /* USER CODE END 2 */

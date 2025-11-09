@@ -201,7 +201,10 @@ CMakeFiles/motor_mit_control.elf.dir/Core/Src/main.c.obj: D:/RoboMaster_git/moto
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/reent.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
+  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h \
+  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
+  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_locale.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h \
@@ -209,6 +212,7 @@ CMakeFiles/motor_mit_control.elf.dir/Core/Src/main.c.obj: D:/RoboMaster_git/moto
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h \
+  C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
@@ -2050,6 +2054,16 @@ D:/RoboMaster_git/motor_mit_control/Core/Inc/gpio.h:
 
 D:/RoboMaster_git/motor_mit_control/Core/Src/main.c:
 
+C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h:
+
+D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h:
+
+C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h:
+
+C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_locale.h:
+
+C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h:
+
 C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h:
 
 D:/RoboMaster_git/motor_mit_control/Core/Inc/usart.h:
@@ -2089,8 +2103,6 @@ C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/signal.h
 C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h:
 
 C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdlib.h:
-
-C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_locale.h:
 
 C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_pthreadtypes.h:
 
@@ -2149,14 +2161,6 @@ D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_h
 D:/RoboMaster_git/motor_mit_control/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c:
 
 D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c:
-
-C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h:
-
-D:/RoboMaster_git/motor_mit_control/Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h:
-
-C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h:
-
-C:/CLionToolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h:
 
 D:/RoboMaster_git/motor_mit_control/codemf/Inc/uart_printf.h:
 

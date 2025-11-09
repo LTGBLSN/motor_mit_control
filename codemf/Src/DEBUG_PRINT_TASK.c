@@ -10,8 +10,9 @@ void DEBUG_PRINT_TASK()
 {
     while (1)
     {
-        usart6_printf("%f,%f \r\n",xiaomimotors[0].return_angle,
-                      xiaomimotors[5].return_angle);
+        usart6_printf("%f,%f \r\n",
+                      xiaomimotors[4].new_no_filtering_speed,
+                      xiaomimotors[4].fifilter_compute_speed);
 
         osDelay(1);
 //

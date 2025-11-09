@@ -20,26 +20,8 @@ volatile float angle = 0;
 volatile float speed = 0;
 
 //8个电机的参数声明
-struct xiaomi_motor xiaomimotors[8]= {
-        {0x01,0x01,0,0,0,0,0,
-                0,0,0,0},
-        {0x02,0x01,0,0,0,0,0,
-                0,0,0,0},
-        {0x03,0x01,0,0,0,0,0,
-                0,0,0,0},
-        {0x04,0x01,0,0,0,0,0,
-                0,0,0,0},
+struct xiaomi_motor xiaomimotors[8];
 
-
-        {0x01,0x02,0,0,0,0,0,
-                0,0,0,0},
-        {0x02,0x02,0,0,0,0,0,
-                0,0,0,0},
-        {0x03,0x02,0,0,0,0,0,
-                0,0,0,0},
-        {0x04,0x02,0,0,0,0,0,
-                0,0,0,0}
-};
 //电机总数
 int8_t num_xiaomimotors = 8;
 
@@ -252,9 +234,26 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
                 v_int = (can1_data[3] << 4) | (can1_data[4] >> 4);
                 t_int = ((can1_data[4] & 0xF) << 8) | can1_data[5];
                 xiaomimotors[can1_data[0] - 0x01].last_angle = xiaomimotors[can1_data[0] - 0x01].return_angle ;
+                xiaomimotors[can1_data[0] - 0x01].old_fifiltering_speed = xiaomimotors[can1_data[0] - 0x01].fifilter_compute_speed ;
                 xiaomimotors[can1_data[0] - 0x01].return_angle = uint_to_float(p_int, P_MIN, P_MAX, 16);
                 xiaomimotors[can1_data[0] - 0x01].return_speed = uint_to_float(v_int, V_MIN, V_MAX, 12);
                 xiaomimotors[can1_data[0] - 0x01].return_tor = uint_to_float(t_int, T_MIN, T_MAX, 12);
+
+                float current_angle = xiaomimotors[can1_data[0] - 0x01].return_angle;
+                float last_angle = xiaomimotors[can1_data[0] - 0x01].last_angle;
+                float diff = current_angle - last_angle;
+                if (diff > 12.0f) {
+                    diff -= 25.0f;
+                } else if (diff < -12.0f) {
+                    diff += 25.0f;
+                }
+                xiaomimotors[can1_data[0] - 0x01].new_no_filtering_speed = diff / 0.001f ;
+
+                xiaomimotors[can1_data[0] - 0x01].fifilter_compute_speed =
+                        xiaomimotors[can1_data[0] - 0x01].new_no_filtering_speed
+                        * xiaomimotors[can1_data[0] - 0x01].alpha_speed
+                        + (1.0f - xiaomimotors[can1_data[0] - 0x01].alpha_speed)
+                          * xiaomimotors[can1_data[0] - 0x01].old_fifiltering_speed ;
 
                 break;
             }
@@ -285,10 +284,29 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
                 p_int = (can2_data[1] << 8) | can2_data[2];
                 v_int = (can2_data[3] << 4) | (can2_data[4] >> 4);
                 t_int = ((can2_data[4] & 0xF) << 8) | can2_data[5];
-                xiaomimotors[can2_data[0] + 0x03].last_angle = xiaomimotors[can2_data[0] - 0x01].return_angle ;
+                xiaomimotors[can2_data[0] + 0x03].last_angle = xiaomimotors[can2_data[0] + 0x03].return_angle ;
+                xiaomimotors[can2_data[0] + 0x03].old_fifiltering_speed = xiaomimotors[can2_data[0] + 0x03].fifilter_compute_speed ;
                 xiaomimotors[can2_data[0] + 0x03].return_angle = uint_to_float(p_int, P_MIN, P_MAX, 16);
                 xiaomimotors[can2_data[0] + 0x03].return_speed = uint_to_float(v_int, V_MIN, V_MAX, 12);
                 xiaomimotors[can2_data[0] + 0x03].return_tor = uint_to_float(t_int, T_MIN, T_MAX, 12);
+
+                float current_angle = xiaomimotors[can2_data[0] + 0x03].return_angle;
+                float last_angle = xiaomimotors[can2_data[0] + 0x03].last_angle;
+                float diff = current_angle - last_angle;
+                if (diff > 12.0f) {
+                    diff -= 25.0f;
+                } else if (diff < -12.0f) {
+                    diff += 25.0f;
+                }
+                xiaomimotors[can2_data[0] + 0x03].new_no_filtering_speed = diff / 0.001f ;
+
+                xiaomimotors[can2_data[0] + 0x03].fifilter_compute_speed =
+                        xiaomimotors[can2_data[0] + 0x03].new_no_filtering_speed
+                        * xiaomimotors[can2_data[0] + 0x03].alpha_speed
+                        + (1.0f - xiaomimotors[can2_data[0] + 0x03].alpha_speed)
+                        * xiaomimotors[can2_data[0] + 0x03].old_fifiltering_speed ;
+
+
 
                 break;
             }
