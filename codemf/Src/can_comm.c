@@ -96,10 +96,10 @@ void CanComm_Init(void)
   //禁止发除电流外的参数，固件bug
 void CanComm_SendControlPara(struct xiaomi_motor xiaomimotor_para)
 {
-    float f_p = 0 ;
-    float f_v = 0 ;
-    float f_kp = 0 ;
-    float f_kd = 0 ;
+    float f_p = 0.0f ;
+    float f_v = 0.0f ;
+    float f_kp = 0.0f ;
+    float f_kd = 0.0f ;
     float f_t = xiaomimotor_para.give_tor;
 
     uint16_t p, v, kp, kd, t;//最终发送，经过转换的
@@ -233,6 +233,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
                 p_int = (can1_data[1] << 8) | can1_data[2];
                 v_int = (can1_data[3] << 4) | (can1_data[4] >> 4);
                 t_int = ((can1_data[4] & 0xF) << 8) | can1_data[5];
+
                 xiaomimotors[can1_data[0] - 0x01].last_angle = xiaomimotors[can1_data[0] - 0x01].return_angle ;
                 xiaomimotors[can1_data[0] - 0x01].old_fifiltering_speed = xiaomimotors[can1_data[0] - 0x01].fifilter_compute_speed ;
                 xiaomimotors[can1_data[0] - 0x01].return_angle = uint_to_float(p_int, P_MIN, P_MAX, 16);

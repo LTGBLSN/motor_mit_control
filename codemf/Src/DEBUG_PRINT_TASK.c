@@ -10,9 +10,8 @@ void DEBUG_PRINT_TASK()
 {
     while (1)
     {
-        usart6_printf("%f,%f \r\n",
-                      xiaomimotors[4].new_no_filtering_speed,
-                      xiaomimotors[4].fifilter_compute_speed);
+        usart6_printf("%f \r\n",
+                      xiaomimotors[1].fifilter_compute_speed);
 
         osDelay(1);
 //

@@ -39,7 +39,7 @@ struct xiaomi_motor{
     float alpha_speed ;//一阶低通滤波系数
     float new_no_filtering_speed ;//新算出来的未滤波速度
     float old_fifiltering_speed ;
-    float fifilter_compute_speed;//微分后的速度
+    float fifilter_compute_speed;//能用的速度
     float return_tor;//回传力矩
     float Tmos;//mos温度
     float Tcoil;//线圈温度
