@@ -107,13 +107,22 @@ int main(void)
   /* USER CODE BEGIN 2 */
     memset(xiaomimotors, 0, sizeof(xiaomimotors));//«Â¡„
     xiaomimotors[0].can_id = 0x01 ;
+    xiaomimotors[0].master_id = 0x11 ;
     xiaomimotors[1].can_id = 0x02 ;
+    xiaomimotors[1].master_id = 0x12 ;
     xiaomimotors[2].can_id = 0x03 ;
+    xiaomimotors[2].master_id = 0x13 ;
     xiaomimotors[3].can_id = 0x04 ;
+    xiaomimotors[3].master_id = 0x14 ;
     xiaomimotors[4].can_id = 0x01 ;
+    xiaomimotors[4].master_id = 0x11 ;
     xiaomimotors[5].can_id = 0x02 ;
+    xiaomimotors[5].master_id = 0x12 ;
     xiaomimotors[6].can_id = 0x03 ;
+    xiaomimotors[6].master_id = 0x13 ;
     xiaomimotors[7].can_id = 0x04 ;
+    xiaomimotors[7].master_id = 0x14 ;
+
     xiaomimotors[0].can_channel = 0x01 ;
     xiaomimotors[1].can_channel = 0x01 ;
     xiaomimotors[2].can_channel = 0x01 ;

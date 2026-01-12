@@ -31,6 +31,7 @@
 
 struct xiaomi_motor{
     uint8_t can_id;//id
+    uint8_t master_id;//返回id
     uint8_t can_channel;//can1还是can2
     uint8_t state;//状态
     float last_angle;//上一次的位置
